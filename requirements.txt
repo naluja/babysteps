@@ -1,5 +1,4 @@
 gunicorn==19.7.1
 
 # Flask Framework
-flask==2.3.2
 jinja == 3.0.1

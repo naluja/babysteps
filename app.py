@@ -4,6 +4,7 @@ from flask_session import Session
 import sqlite3
 from datetime import datetime
 from dateutil import relativedelta
+from markupsafe import Markup
 
 
 app = Flask(__name__)
