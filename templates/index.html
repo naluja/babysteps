@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<h1>Welcome to <span class="blue">B</span><span class="yellow">a</span><span class="green">b</span><span
+        class="red">y</span>Steps</h1>
+<p><span class="register">Register</span> or <span class="login">Log In</span></p>
+{% endblock %}
+{% block main %}
+<section class="register">
+    <form autocapitalize="off" class="register-form" method="post" action="/">
+        <i class="fa-regular fa-x"></i>
+        <h3>Register</h3>
+
+        <div class="form-box">
+            <label for="email">Email: </label>
+            <input type="email" id="email" aria-describedby="email" name="email">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="username">Username: </label>
+            <input type="text" id="username" aria-describedby="username" name="username">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="babyName">Your baby name:</label>
+            <input type="text" id="babyName" aria-describedby="babyName" name="babyname">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="birthday">Date of your baby birth:</label>
+            <input type="date" id="birthday" aria-describedby="babyBirthDay" name="birthday">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="password">Password: </label>
+            <input type="password" id="password" aria-describedby="password" name="password">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="passwordCheck">Repeat password: </label>
+            <input type="password" id="passwordCheck" aria-describedby="passwordCheck">
+            <p class="errorText"></p>
+        </div>
+        <button class="register-btn" type="submit">Submit</button>
+    </form>
+</section>
+<section class="login">
+    <form autocapitalize="off" class="login-form" method="post" , action="/home">
+        <i class="fa-regular fa-x"></i>
+        <h3>Log In</h3>
+        <div class="form-box">
+            <label for="usernameL">Username: </label>
+            <input type="text" id="usernameL" aria-describedby="username" name="usernameL">
+            <p class="errorText"></p>
+        </div>
+        <div class="form-box">
+            <label for="passwordL">Password: </label>
+            <input type="password" id="passwordL" aria-describedby="password" name="passwordL">
+            <p class="errorText"></p>
+        </div>
+        <button class="login-btn">Log In</button>
+    </form>
+
+</section>
+
+{% endblock %}
+{% block scripts %}
+<script src="/static/methods.js"></script>
+<script src="/static/script.js"></script>
+{% endblock scripts %}

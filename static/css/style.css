@@ -1,0 +1,684 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+body {
+  background-image: url(/static/bc.jpeg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  min-height: 100vh;
+}
+
+.navbar {
+  width: 100%;
+  background-color: rgb(44, 46, 50);
+  color: white;
+}
+.navbar .navbar-brand {
+  color: #fff;
+}
+.navbar .navbar-brand .blue {
+  color: rgb(32, 87, 197);
+}
+.navbar .navbar-brand .yellow {
+  color: rgb(244, 190, 13);
+}
+.navbar .navbar-brand .green {
+  color: rgb(51, 176, 42);
+}
+.navbar .navbar-brand .red {
+  color: rgb(251, 34, 42);
+}
+.navbar .navbar-brand span {
+  font-size: 1.4rem;
+}
+.navbar .navbar-brand img {
+  border-radius: 20px;
+}
+.navbar .navbar-nav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.navbar .navbar-nav .links {
+  display: flex;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 20px 30px;
+  text-align: center;
+  color: rgb(16, 21, 79);
+  width: 100%;
+}
+header h1 {
+  font-size: 3rem;
+  font-weight: 200;
+}
+header h1 span {
+  font-size: 3rem;
+  font-weight: 500;
+}
+header h1 .blue {
+  color: rgb(32, 87, 197);
+}
+header h1 .yellow {
+  color: rgb(244, 190, 13);
+}
+header h1 .green {
+  color: rgb(51, 176, 42);
+}
+header h1 .red {
+  color: rgb(251, 34, 42);
+}
+header p .register,
+header p .login {
+  padding: 10px;
+}
+header p .register:hover,
+header p .login:hover {
+  color: rgb(32, 87, 197);
+  cursor: pointer;
+}
+
+.register-form {
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.7));
+  margin-top: 100px;
+  padding: 20px 30px;
+  color: rgb(16, 21, 79);
+  border-radius: 5px;
+  justify-content: center;
+  position: relative;
+  display: none;
+  height: 850px;
+  width: 500px;
+  margin: 100px auto;
+}
+.register-form i {
+  position: absolute;
+  top: 10px;
+  left: 460px;
+  padding: 10px;
+  cursor: pointer;
+}
+.register-form h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.register-form label {
+  font-weight: 400;
+  align-self: start;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.register-form .form-box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.register-form .form-box input,
+.register-form select {
+  border: none;
+  padding: 5px 0px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 90%;
+  border: 1px solid rgb(32, 87, 197);
+}
+.register-form .form-box input::-moz-placeholder, .register-form select::-moz-placeholder {
+  color: rgb(138, 144, 154);
+}
+.register-form .form-box input::placeholder,
+.register-form select::placeholder {
+  color: rgb(138, 144, 154);
+}
+.register-form .form-box input:hover {
+  background-color: #fff;
+}
+.register-form button {
+  margin-top: 30px;
+  width: 90%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(32, 87, 197);
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+.register-form button:hover {
+  background-image: linear-gradient(80deg, rgb(32, 87, 197), rgb(244, 190, 13), rgb(251, 34, 42), rgb(51, 176, 42), rgb(32, 87, 197), rgb(32, 87, 197));
+  background-size: 800%;
+  animation: colors 3s linear infinite;
+}
+.register-form .form-box .errorText {
+  color: rgb(251, 34, 42);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+.register-form .form-box.error input {
+  border: 1px solid tomato;
+  border-radius: 5px;
+  background-color: rgba(250, 38, 1, 0.181);
+  background-image: url(/static/images/error.svg);
+  background-repeat: no-repeat;
+  background-position: left 95% bottom 50%;
+  background-size: 20px;
+}
+
+.login-form {
+  height: 400px;
+  width: 500px;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.7));
+  margin-top: 100px;
+  padding: 20px 30px;
+  color: rgb(16, 21, 79);
+  border-radius: 5px;
+  justify-content: center;
+  position: relative;
+  display: none;
+  margin: 100px auto;
+}
+.login-form i {
+  position: absolute;
+  top: 10px;
+  left: 460px;
+  padding: 10px;
+  cursor: pointer;
+}
+.login-form h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.login-form label {
+  font-weight: 400;
+  align-self: start;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.login-form .form-box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login-form .form-box input,
+.login-form select {
+  border: none;
+  padding: 5px 0px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 90%;
+  border: 1px solid rgb(32, 87, 197);
+}
+.login-form .form-box input::-moz-placeholder, .login-form select::-moz-placeholder {
+  color: rgb(138, 144, 154);
+}
+.login-form .form-box input::placeholder,
+.login-form select::placeholder {
+  color: rgb(138, 144, 154);
+}
+.login-form .form-box input:hover {
+  background-color: #fff;
+}
+.login-form button {
+  margin-top: 30px;
+  width: 90%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(32, 87, 197);
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+.login-form button:hover {
+  background-image: linear-gradient(80deg, rgb(32, 87, 197), rgb(244, 190, 13), rgb(251, 34, 42), rgb(51, 176, 42), rgb(32, 87, 197), rgb(32, 87, 197));
+  background-size: 800%;
+  animation: colors 3s linear infinite;
+}
+.login-form .form-box .errorText {
+  color: rgb(251, 34, 42);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+.login-form .form-box.error input {
+  border: 1px solid tomato;
+  border-radius: 5px;
+  background-color: rgba(250, 38, 1, 0.181);
+  background-image: url(/static/images/error.svg);
+  background-repeat: no-repeat;
+  background-position: left 95% bottom 50%;
+  background-size: 20px;
+}
+
+@keyframes colors {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+.heading-home h3 {
+  font-size: 2rem;
+  font-weight: 200;
+}
+.heading-home h3 .color {
+  color: rgb(32, 87, 197);
+  font-size: 2rem;
+  font-weight: 400;
+}
+.heading-home h4 {
+  font-size: 1.5rem;
+  font-weight: 200;
+}
+.heading-home .heading-home-text {
+  display: flex;
+  justify-content: space-around;
+  width: 300px;
+  margin: auto;
+}
+.heading-home .heading-home-text p {
+  font-size: 1.2rem;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+}
+.heading-home .heading-home-text p .bold {
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: rgb(32, 87, 197);
+}
+
+.grid-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  row-gap: 10px;
+  padding: 10px;
+  -moz-column-gap: 150px;
+       column-gap: 150px;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+.grid-container .grid-item {
+  box-shadow: 1px 5px 15px rgb(218, 216, 216);
+  margin: auto;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #fff;
+  color: rgb(16, 21, 79);
+  justify-content: center;
+}
+.grid-container .grid-item h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+.grid-container .grid-item .heading {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.grid-container .grid-item .heading h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.grid-container .grid-item .heading img {
+  width: 10%;
+  height: 10%;
+}
+.grid-container .grid-item .content form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(45deg, #fff, rgba(255, 255, 255, 0.7));
+  margin-top: 100px;
+  padding: 20px 30px;
+  color: rgb(16, 21, 79);
+  border-radius: 5px;
+  justify-content: center;
+  position: relative;
+  margin-top: 5px;
+  padding: 15px;
+}
+.grid-container .grid-item .content form i {
+  position: absolute;
+  top: 10px;
+  left: 460px;
+  padding: 10px;
+  cursor: pointer;
+}
+.grid-container .grid-item .content form h3 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  font-weight: 200;
+}
+.grid-container .grid-item .content form label {
+  font-weight: 400;
+  align-self: start;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.grid-container .grid-item .content form .form-box {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.grid-container .grid-item .content form .form-box input,
+.grid-container .grid-item .content form select {
+  border: none;
+  padding: 5px 0px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.7);
+  width: 90%;
+  border: 1px solid rgb(32, 87, 197);
+}
+.grid-container .grid-item .content form .form-box input::-moz-placeholder, .grid-container .grid-item .content form select::-moz-placeholder {
+  color: rgb(138, 144, 154);
+}
+.grid-container .grid-item .content form .form-box input::placeholder,
+.grid-container .grid-item .content form select::placeholder {
+  color: rgb(138, 144, 154);
+}
+.grid-container .grid-item .content form .form-box input:hover {
+  background-color: #fff;
+}
+.grid-container .grid-item .content form button {
+  margin-top: 30px;
+  width: 90%;
+  padding: 10px 0;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(32, 87, 197);
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.3rem;
+}
+.grid-container .grid-item .content form button:hover {
+  background-image: linear-gradient(80deg, rgb(32, 87, 197), rgb(244, 190, 13), rgb(251, 34, 42), rgb(51, 176, 42), rgb(32, 87, 197), rgb(32, 87, 197));
+  background-size: 800%;
+  animation: colors 3s linear infinite;
+}
+.grid-container .grid-item .content form .form-box .errorText {
+  color: rgb(251, 34, 42);
+  font-size: 0.5rem;
+  text-transform: uppercase;
+}
+.grid-container .grid-item .content form .form-box.error input {
+  border: 1px solid tomato;
+  border-radius: 5px;
+  background-color: rgba(250, 38, 1, 0.181);
+  background-image: url(/static/images/error.svg);
+  background-repeat: no-repeat;
+  background-position: left 95% bottom 50%;
+  background-size: 20px;
+}
+.grid-container .grid-item .content form label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgb(138, 144, 154);
+}
+.grid-container .grid-item .content form .form-box {
+  width: 90%;
+}
+.grid-container .grid-item .content form button {
+  width: 40%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+.grid-container .grid-item .content form p {
+  font-size: 0.8rem;
+  text-align: start;
+  width: 80%;
+  color: rgb(138, 144, 154);
+  margin-bottom: 20px;
+}
+.grid-container .teeth {
+  grid-area: 4/2/span 2;
+  border-top: 5px solid rgb(251, 34, 42);
+}
+.grid-container .sleep {
+  grid-area: 1/2/span 2;
+  border-top: 5px solid rgb(51, 176, 42);
+}
+.grid-container .meds {
+  grid-area: 2/1/span 3;
+  border-top: 5px solid rgb(32, 87, 197);
+}
+.grid-container .meals {
+  grid-area: 2/3/span 3;
+  border-top: 5px solid rgb(244, 190, 13);
+}
+
+.result-text {
+  margin-top: 200px;
+  background-color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  color: rgb(16, 21, 79);
+  padding: 20px;
+}
+
+.info-text {
+  font-size: 2rem;
+}
+
+@media screen and (max-width: 1250px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header h1 span {
+    font-size: 2rem;
+  }
+  header p,
+  header span {
+    font-size: 1.2rem;
+  }
+  .register-form {
+    width: 400px;
+    margin: 50px auto;
+    height: 800px;
+  }
+  .register-form h3 {
+    font-size: 2rem;
+  }
+  .register-form label {
+    font-size: 0.8rem;
+  }
+  .register-form i {
+    left: 360px;
+  }
+  .login-form {
+    width: 400px;
+    margin: 50px auto;
+  }
+  .login-form h3 {
+    font-size: 2rem;
+    margin-top: 5px;
+  }
+  .login-form label {
+    font-size: 0.8rem;
+  }
+  .login-form i {
+    left: 360px;
+  }
+  .grid-container {
+    grid-template-rows: 1fr, 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+  .grid-container .grid-item h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+  .grid-container .grid-item .heading h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .grid-container .grid-item .content form {
+    padding: 5px;
+  }
+  .grid-container .grid-item .content form label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgb(138, 144, 154);
+  }
+  .grid-container .grid-item .content form .form-box {
+    width: 90%;
+  }
+  .grid-container .grid-item .content form button {
+    width: 90%;
+  }
+  .grid-container .grid-item .content form p {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+  .grid-container .teeth {
+    grid-area: 1/1;
+    height: 400px;
+  }
+  .grid-container .sleep {
+    grid-area: 1/2;
+    height: 400px;
+  }
+  .grid-container .meds {
+    grid-area: 2/1;
+    height: 500px;
+  }
+  .grid-container .meals {
+    grid-area: 2/2;
+    height: 500px;
+  }
+}
+@media screen and (max-width: 650px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  header h1 span {
+    font-size: 2rem;
+  }
+  header p,
+  header span {
+    font-size: 0.8rem;
+  }
+  .register-form {
+    width: 300px;
+    margin: 50px auto;
+    height: 650px;
+  }
+  .register-form h3 {
+    font-size: 1.5rem;
+  }
+  .register-form label {
+    font-size: 0.8rem;
+  }
+  .register-form i {
+    left: 260px;
+  }
+  .register-form .form-box {
+    margin-bottom: 0px;
+  }
+  .register-form button {
+    margin-top: 3px;
+  }
+  .login-form {
+    width: 300px;
+    margin: 50px auto;
+  }
+  .login-form h3 {
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+  .login-form label {
+    font-size: 0.8rem;
+  }
+  .login-form i {
+    left: 260px;
+  }
+  .heading-home h3 {
+    font-size: 1.5rem;
+    width: 300px;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  .heading-home h3 .color {
+    font-size: 1.5rem;
+  }
+  .heading-home h4 {
+    font-size: 1.2rem;
+  }
+  .heading-home .heading-home-text {
+    width: 200px;
+  }
+  .heading-home .heading-home-text p {
+    font-size: 1rem;
+  }
+  .heading-home .heading-home-text p .bold {
+    font-size: 1rem;
+  }
+  .grid-container {
+    grid-template-rows: 390px, 390px, 1fr, 1fr;
+    grid-template-columns: 1fr;
+  }
+  .grid-container .grid-item {
+    width: 300px;
+  }
+  .grid-container .grid-item h2 {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+  .grid-container .grid-item .heading h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .grid-container .grid-item .content form {
+    padding: 5px;
+  }
+  .grid-container .grid-item .content form label {
+    font-size: 0.6rem;
+    font-weight: 600;
+    color: rgb(138, 144, 154);
+  }
+  .grid-container .grid-item .content form .form-box {
+    width: 90%;
+  }
+  .grid-container .grid-item .content form button {
+    width: 90%;
+  }
+  .grid-container .grid-item .content form p {
+    font-size: 0.8rem;
+    width: 90%;
+  }
+  .grid-container .teeth {
+    grid-area: 4;
+  }
+  .grid-container .sleep {
+    grid-area: 2;
+  }
+  .grid-container .meds {
+    grid-area: 3;
+  }
+  .grid-container .meals {
+    grid-area: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

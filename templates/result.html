@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/logo.jpeg" width="45" height="40" alt="">
+            <span class="blue">B</span><span class="yellow">a</span><span class="green">b</span><span
+                class="red">y</span>Steps</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="links">
+                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link" href="/records">Records </a>
+                </div>
+                <a class="nav-link logout" href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block main %}
+<h2 class="result-text">{{msg}}</h2>
+{% endblock %}

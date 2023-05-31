@@ -1,0 +1,160 @@
+{% extends "layout.html" %}
+{% block nav %}
+<nav class="navbar navbar-expand-md navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img src="/static/images/logo.jpeg" width="45" height="40" alt="">
+            <span class="blue">B</span><span class="yellow">a</span><span class="green">b</span><span
+                class="red">y</span>Steps</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <div class="links">
+                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" href="/records">Records </a>
+                </div>
+                <a class="nav-link logout" href="/logout">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+{% block header %}
+<div class="heading-home">
+    <h3>Welcome to <span class="color">{{ babyname }} </span>steps!</h3>
+    <h4>Today your {{ babyname }} is:</h4>
+    <div class="heading-home-text">
+        <p><span class="bold">{{ weeks }}</span> <span>weeks</span></p>
+        <p><span class="bold">{{ months }}</span> <span>months</span></p>
+        <p><span class="bold">{{ years }} </span><span>years</span></p>
+    </div>>
+</div>
+{% endblock %}
+{% block main %}
+<div class="grid-container">
+    <section class="grid-item teeth">
+        <div class="content">
+            <form action="/tooth" method="post" class="tooth-form">
+                <div class="heading">
+                    <h4>Toothing</h4>
+                    <img src="/static/images/tooth-line-icon.svg" alt="">
+                </div>
+                <p>Teething is a tough nut to crack, make a note of every tooth your little one has</p>
+                <div class="form-box">
+                    <label for="tooth">Tooth:</label>
+                    <input type="text" id="tooth" name="tooth">
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="eruption">Eruption date:</label>
+                    <input type="date" id="eruption" name="eruption">
+                    <p class="errorText"></p>
+                </div>
+                <button class="tooth-btn" type="submit">submit</button>
+            </form>
+        </div>
+
+    </section>
+
+    <section class="grid-item sleep">
+        <div class="content">
+            <form action="/sleep" method="post" class="sleep-form">
+                <div class="heading">
+                    <h4>Sleep</h4>
+                    <img src="/static/images/moon-line-icon.svg" alt="">
+                </div>
+                <p>Sleep is a very important part of a child's and parent's life. Track your baby's sleep routine</p>
+                <div class="form-box">
+                    <label for="napstart">Nap start:</label>
+                    <input type="time" id="napstart" name="napstart">
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="napend">Nap end:</label>
+                    <input type="time" id="napend" name="napend">
+                    <p class="errorText"></p>
+                </div>
+                <button class="sleep-btn" type="submit">submit</button>
+            </form>
+        </div>
+
+    </section>
+
+    <section class="grid-item meals">
+        <div class="content">
+            <form action="/meals" method="post" class="meals-form">
+                <div class="heading">
+                    <h4>Meals</h4>
+                    <img src="/static/images/dish-spoon-knife-icon.svg" alt="">
+                </div>
+                <p>write down what your toddler ate, thanks to which you will be able to locate the source of potential
+                    allergies more easily</p>
+                <div class="form-box">
+                    <label for="mealType">Meal Type:</label>
+                    <select name="mealType" id="mealType">
+                        <option value="breakfast">Breakfast</option>
+                        <option value="second breakfast">Second breakfast</option>
+                        <option value="dinner">Dinner </option>
+                        <option value="snack">Snack </option>
+                        <option value="supper">Supper </option>
+                    </select>
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="meal">Meal: </label>
+                    <input type="text" id="meal" name="meal">
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="mealTime">Meal Time:</label>
+                    <input type="time" id="mealTime" name="mealTime">
+                    <p class="errorText"></p>
+                </div>
+                <button class="meals-btn" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </section>
+
+    <section class="grid-item meds">
+
+        <div class="content">
+            <form action="/meds" method="post" class="meds-form">
+                <div class="heading">
+                    <h4>Meds</h4>
+                    < <img src="/static/images/medicine-bottle-icon.svg" alt="">
+                </div>
+                <p>Keep your head up! Treat the illness as an immunity training
+                    and write down the medicines you give your child</p>
+                <div class="form-box">
+                    <label for="med">Medication: </label>
+                    <input type="text" id="med" name="med">
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="medTime">Medication podanie:</label>
+                    <input type="time" id="medTime" name="medTime">
+                    <p class="errorText"></p>
+                </div>
+                <div class="form-box">
+                    <label for="dose">Medication dose:</label>
+                    <input type="number" id="dose" name="dose">
+                    <p class="errorText"></p>
+                </div>
+                <button class="med-btn" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </section>
+
+
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script src="/static/methods.js"></script>
+<script src="/static/main.js"></script>
+{% endblock scripts %}

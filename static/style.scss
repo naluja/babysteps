@@ -1,0 +1,538 @@
+@use "colors" as *;
+@mixin form {
+	flex-direction: column;
+	align-items: center;
+	background: linear-gradient(45deg, $white, $transparentWhite);
+	margin-top: 100px;
+	padding: 20px 30px;
+	color: $darkBlue;
+	border-radius: 5px;
+	justify-content: center;
+	position: relative;
+	i {
+		position: absolute;
+		top: 10px;
+		left: 460px;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h3 {
+		font-size: 2.5rem;
+		margin-bottom: 10px;
+		font-weight: 200;
+	}
+
+	label {
+		font-weight: 400;
+		align-self: start;
+		margin-left: 20px;
+		margin-bottom: 5px;
+	}
+	.form-box {
+		width: 100%;
+		margin-bottom: 20px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.form-box input,
+	select {
+		border: none;
+		padding: 5px 0px;
+		border-radius: 5px;
+		background-color: $transparentWhite;
+		width: 90%;
+		border: 1px solid $blue;
+	}
+	.form-box input::placeholder,
+	select::placeholder {
+		color: $lightGray;
+	}
+	.form-box input:hover {
+		background-color: #fff;
+	}
+	button {
+		margin-top: 30px;
+		width: 90%;
+		padding: 10px 0;
+		border-radius: 5px;
+		border: none;
+		background-color: $blue;
+		text-transform: uppercase;
+		color: $white;
+		letter-spacing: 0.3rem;
+	}
+	button:hover {
+		background-image: linear-gradient(
+			80deg,
+			$blue,
+			$yellow,
+			$red,
+			$green,
+			$blue,
+			$blue
+		);
+		background-size: 800%;
+		animation: colors 3s linear infinite;
+	}
+	.form-box .errorText {
+		color: $red;
+		font-size: 0.5rem;
+		text-transform: uppercase;
+	}
+	.form-box.error input {
+		border: 1px solid tomato;
+		border-radius: 5px;
+		background-color: rgba(250, 38, 1, 0.181);
+		background-image: url(/static/images/error.svg);
+		background-repeat: no-repeat;
+		background-position: left 95% bottom 50%;
+		background-size: 20px;
+	}
+}
+@mixin logo {
+	.blue {
+		color: $blue;
+	}
+	.yellow {
+		color: $yellow;
+	}
+	.green {
+		color: $green;
+	}
+	.red {
+		color: $red;
+	}
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 16px;
+}
+body {
+	background-image: url(/static/bc.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: "Poppins", sans-serif;
+	color: white;
+	min-height: 100vh;
+}
+.navbar {
+	width: 100%;
+	background-color: $darkGray;
+	color: white;
+	.navbar-brand {
+		color: $white;
+		@include logo;
+		span {
+			font-size: 1.4rem;
+		}
+		img {
+			border-radius: 20px;
+		}
+	}
+	.navbar-nav {
+		display: flex;
+		width: 100%;
+		justify-content: space-between;
+		.links {
+			display: flex;
+		}
+	}
+}
+header {
+	background-color: rgba($color: #fff, $alpha: 0.7);
+	border-radius: 5px;
+	padding: 20px 30px;
+	text-align: center;
+	color: $darkBlue;
+	width: 100%;
+
+	h1 {
+		font-size: 3rem;
+		font-weight: 200;
+		span {
+			font-size: 3rem;
+			font-weight: 500;
+		}
+		@include logo;
+	}
+	p {
+		.register,
+		.login {
+			padding: 10px;
+		}
+		.register:hover,
+		.login:hover {
+			color: $blue;
+			cursor: pointer;
+		}
+	}
+}
+.register-form {
+	@include form;
+	display: none;
+	height: 850px;
+	width: 500px;
+	margin: 100px auto;
+}
+.login-form {
+	height: 400px;
+	width: 500px;
+	@include form;
+	display: none;
+	margin: 100px auto;
+}
+
+@keyframes colors {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
+.heading-home {
+	h3 {
+		font-size: 2rem;
+		font-weight: 200;
+		.color {
+			color: $blue;
+			font-size: 2rem;
+			font-weight: 400;
+		}
+	}
+	h4 {
+		font-size: 1.5rem;
+		font-weight: 200;
+	}
+	.heading-home-text {
+		display: flex;
+		justify-content: space-around;
+		width: 300px;
+		margin: auto;
+		p {
+			font-size: 1.2rem;
+			font-weight: 200;
+			display: flex;
+			flex-direction: column;
+			.bold {
+				font-weight: 400;
+				font-size: 1.3rem;
+				color: $blue;
+			}
+		}
+	}
+}
+
+.grid-container {
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(6, 1fr);
+	row-gap: 10px;
+	padding: 10px;
+	column-gap: 150px;
+	background-color: $transparentWhite;
+
+	.grid-item {
+		box-shadow: 1px 5px 15px rgb(218, 216, 216);
+		margin: auto;
+		border-radius: 5px;
+		display: flex;
+		flex-direction: column;
+		width: 300px;
+		background-color: $white;
+		color: $darkBlue;
+		justify-content: center;
+		h2 {
+			font-size: 1.5rem;
+			margin-bottom: 0;
+		}
+		.heading {
+			display: flex;
+			justify-content: space-between;
+			margin-bottom: 20px;
+			h4 {
+				font-size: 1.5rem;
+				font-weight: 600;
+			}
+			img {
+				width: 10%;
+				height: 10%;
+			}
+		}
+
+		.content form {
+			display: flex;
+			@include form;
+			margin-top: 5px;
+			padding: 15px;
+
+			label {
+				font-size: 0.8rem;
+				font-weight: 600;
+				color: $lightGray;
+			}
+			.form-box {
+				width: 90%;
+			}
+			button {
+				width: 40%;
+				margin-top: 5px;
+				margin-bottom: 10px;
+			}
+			p {
+				font-size: 0.8rem;
+				text-align: start;
+				width: 80%;
+				color: $lightGray;
+				margin-bottom: 20px;
+			}
+		}
+	}
+	.teeth {
+		grid-area: 4 / 2 / span 2;
+		border-top: 5px solid $red;
+	}
+	.sleep {
+		grid-area: 1 / 2 / span 2;
+		border-top: 5px solid $green;
+	}
+	.meds {
+		grid-area: 2 / 1 / span 3;
+		border-top: 5px solid $blue;
+	}
+	.meals {
+		grid-area: 2 / 3 / span 3;
+		border-top: 5px solid $yellow;
+	}
+}
+.result-text {
+	margin-top: 200px;
+	background-color: $transparentWhite;
+	text-align: center;
+	color: $darkBlue;
+	padding: 20px;
+}
+.info-text{
+	font-size: 2rem;
+}
+@media screen and (max-width: 1250px) {
+	header {
+		h1 {
+			font-size: 2rem;
+			span {
+				font-size: 2rem;
+			}
+		}
+		p,
+		span {
+			font-size: 1.2rem;
+		}
+	}
+	.register-form {
+		width: 400px;
+		margin: 50px auto;
+		height: 800px;
+		h3 {
+			font-size: 2rem;
+		}
+		label {
+			font-size: 0.8rem;
+		}
+		i {
+			left: 360px;
+		}
+	}
+	.login-form {
+		width: 400px;
+		margin: 50px auto;
+		h3 {
+			font-size: 2rem;
+			margin-top: 5px;
+		}
+		label {
+			font-size: 0.8rem;
+		}
+		i {
+			left: 360px;
+		}
+	}
+	.grid-container {
+		grid-template-rows: 1fr, 1fr;
+		grid-template-columns: repeat(2, 1fr);
+		column-gap: 0px;
+		.grid-item {
+			h2 {
+				font-size: 1.2rem;
+				margin-bottom: 0;
+			}
+			.heading {
+				h4 {
+					font-size: 1.2rem;
+					font-weight: 600;
+				}
+			}
+			.content form {
+				padding: 5px;
+
+				label {
+					font-size: 0.6rem;
+					font-weight: 600;
+					color: $lightGray;
+				}
+				.form-box {
+					width: 90%;
+				}
+				button {
+					width: 90%;
+				}
+				p {
+					font-size: 0.8rem;
+					width: 90%;
+				}
+			}
+		}
+
+		.teeth {
+			grid-area: 1 / 1;
+			height: 400px;
+		}
+		.sleep {
+			grid-area: 1 / 2;
+			height: 400px;
+		}
+		.meds {
+			grid-area: 2 / 1;
+			height: 500px;
+		}
+		.meals {
+			grid-area: 2 / 2;
+			height: 500px;
+		}
+	}
+}
+@media screen and (max-width: 650px) {
+	header {
+		h1 {
+			font-size: 2rem;
+			span {
+				font-size: 2rem;
+			}
+		}
+		p,
+		span {
+			font-size: 0.8rem;
+		}
+	}
+
+	.register-form {
+		width: 300px;
+		margin: 50px auto;
+		height: 650px;
+		h3 {
+			font-size: 1.5rem;
+		}
+		label {
+			font-size: 0.8rem;
+		}
+		i {
+			left: 260px;
+		}
+		.form-box {
+			margin-bottom: 0px;
+		}
+		button {
+			margin-top: 3px;
+		}
+	}
+	.login-form {
+		width: 300px;
+		margin: 50px auto;
+		h3 {
+			font-size: 1.5rem;
+			margin-top: 5px;
+		}
+		label {
+			font-size: 0.8rem;
+		}
+		i {
+			left: 260px;
+		}
+	}
+	.heading-home {
+		h3 {
+			font-size: 1.5rem;
+			width: 300px;
+			margin: auto;
+			margin-bottom: 10px;
+			.color {
+				font-size: 1.5rem;
+			}
+		}
+		h4 {
+			font-size: 1.2rem;
+		}
+		.heading-home-text {
+			width: 200px;
+			p {
+				font-size: 1rem;
+				.bold {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+	.grid-container {
+		grid-template-rows: 390px, 390px, 1fr, 1fr;
+		grid-template-columns: 1fr;
+		.grid-item {
+			width: 300px;
+			h2 {
+				font-size: 1rem;
+				margin-bottom: 0;
+			}
+			.heading {
+				h4 {
+					font-size: 1.2rem;
+					font-weight: 600;
+				}
+			}
+			.content form {
+				padding: 5px;
+
+				label {
+					font-size: 0.6rem;
+					font-weight: 600;
+					color: $lightGray;
+				}
+				.form-box {
+					width: 90%;
+				}
+				button {
+					width: 90%;
+				}
+				p {
+					font-size: 0.8rem;
+					width: 90%;
+				}
+			}
+		}
+
+		.teeth {
+			grid-area: 4;
+		}
+		.sleep {
+			grid-area: 2;
+		}
+		.meds {
+			grid-area: 3;
+		}
+		.meals {
+			grid-area: 1;
+		}
+	}
+}
